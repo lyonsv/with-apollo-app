@@ -56,7 +56,7 @@ export default function PostList() {
   }
 
   if (error) return <ErrorMessage message="Error loading posts." />
-  if (loading && !loadingMorePosts) return <div>Loading</div>
+  if (!data && loading && !loadingMorePosts) return <div>Loading</div>
 
   const { allPosts, _allPostsMeta } = data
   const areMorePosts = allPosts.length < _allPostsMeta.count
